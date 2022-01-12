@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="../css/stylesheet.css">
+	<link rel="stylesheet" type="text/css" href="../css/stylesheetResize.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap" rel="stylesheet">
+	<title>BE REAL</title>
+	<script>
+		// cette fonction valide le formulaire de la newsletter en affichant une alerte pour dire que la personne s'est bien inscrit
+		function validateNewsletter(){
+	  		if (document.getElementById('emailAddress') != "") {
+	  			alert("Merci de vous être inscrit à notre newsletter pour recevoir plus d'informations sur nous et nos actualités! :)")
+	  		}
+	  	}
+	</script>
+</head>
+
+<body>
+	<header>
+		<img src="../images/logo.png" alt="logo" class="logo" id="image">
+	    <menu>
+		    <li><a href="./contact.html" class="currentPage">Contact</a></li>
+		    <li><a href="./devis.html">Devis</a></li>
+		    <li><a href="./agences.html">Agence</a></li>
+		    <li><a href="./lEquipe.html">L'équipe</a></li>
+		    <li><a href="./quisommesnous.html">Qui sommes-nous?</a></li>
+	     	<li><a href="./index.html">Home</a></li>
+	    </menu>
+	</header>
+
+	<main>
+	
+		<p class="h3Title">vous souhaitez nous contacter?</p>
+		
+		<!-- Le formulaire ci-dessous permet à l'utilisateur de nous contacter avec une possibilité de choisir une catégorie qui lance une focntion js expliquée plus bas-->
+		<div class="background backgroundContact">
+			<form class="contactForm" method="post" name="contactForm" onsubmit=" return validateForm()">
+				<input type="text" id="formName" class="field" placeholder="nom*" required>
+			  	<input type="text" id="formSurname" class="field" placeholder="prénom*" required><br>
+			  	<input type="Email" id="emailAddressForm" class="field" placeholder="email*" required><br>
+			  	<input type="tel" id="phoneNumber" class="field" placeholder="numéro de téléphone*" required><br>
+			  	<select id="objet" class="field" required>
+	  				<option disabled selected value="">Sélectionnez un objet</option>
+	  				<option id="optionOne">Faire un devis</option>
+	  				<option id="optionTwo">Vous avez un problème avec un de nos services</option>
+	  				<option id="optionThree">Vous souhaitez nous contacter pour des questions</option>
+	 				<option id="optionFour">Autre</option>
+				</select><br>
+			 	<input type="text" id="explanation" class="field" placeholder="expliquez-nous…*" required><br>
+			 	<input type="radio" name="email" id="radioEmail" value="mail">
+			 	<label for="radioEmail">Me contacter par mail*</label><br>
+			 	<input type="radio" name="telephone" id="radioPhone" value="telephone">
+			 	<label for="radioPhone">Me contacter par téléphone*</label><br><br>
+			  	<input id="submitLoginForm" class="field" type="submit" value="Submit">
+			</form> 
+
+			<script>
+				// la fonction ci-dessous permet d'alerter l'utilisateur du temps de traitement de sa demande
+				var name = document.getElementById("formName");
+				var surname = document.getElementById("formSurname");
+				var email = document.getElementById("emailAddress");
+				var explanation = document.getElementById("explanation");
+
+					
+				function validateForm() {
+					if (name != "" && surname != "" && email != "" && explanation != "" && document.getElementById("optionOne").selected){
+						alert("Nous avons bien réceptionné votre message et vous répondrons dans un délais de 24h. Merci!");
+					} if (name != "" && surname != "" && email != "" && explanation != "" && document.getElementById("optionTwo").selected){
+						alert("Nous avons bien réceptionné votre message et vous répondrons dans un délais de 48h. Merci!");
+					} if (name != "" && surname != "" && email != "" && explanation != "" && document.getElementById("optionThree").selected){
+						alert("Nous avons bien réceptionné votre message et vous répondrons dans un délais de 72h. Merci!");
+					} if (name != "" && surname != "" && email != "" && explanation != "" && document.getElementById("optionFour").selected){
+						alert("Nous avons bien réceptionné votre message et vous répondrons dans un délais de 48h. Merci!");
+					}
+				}
+			</script>
+		</div>
+		
+		<div class="newsletter">
+		    <p>S'abonner à la newsletter</p>
+		    <form class="contactForm" method="post" name="contactForm" onsubmit="validateNewsletter()">
+			    <input type="Email" class="field" id="emailAddress" placeholder="adresse mail" required>
+			    <input id="submitLogin" class="field" type="submit" value="Submit" >
+			</form>
+	  	</div>
+
+	</main>
+	
+	<!-- le footer se compose de trois parties : les réseaux sociaux avec des images, les liens rapides dans tableau et des informations de contact avec des images -->
+	<footer>
+		<div class="row">
+			<div class="col-f-4 column leftPart">
+        		<p>Suivez-nous sur nos réseaux</p>
+        		<div class="icon">
+					<img src="../images/facebook.png" alt="logo Facebook">
+					<img src="../images/instagram.png" alt="logo Instagram">
+					<img src="../images/twitter.png" alt="logo Twitter">
+					<img src="../images/pinterest.png" alt="logo Pinterest">
+					<img src="../images/whatsapp.png" alt="logo Whatsapp">
+					<img src="../images/youtube.png" alt="logo YouTube">
+				</div>
+			</div>
+
+			<div class="col-f-4 column middlePart">
+				<table>
+				  	<tr>
+				  		<th class="right"><a href="./index.html">HOME</a></th>
+				  		<th class="left"><a href="./quisommesnous.html">EXPERTISE</a></th>
+				  	</tr>
+				  	<tr>
+				  		<th class="right"><a href="./contact.html">CONTACT</a></th>
+				  		<th class="left"><a href="./agences.html">AGENCES</a></th>
+				  	</tr>
+				  	<tr>
+				  		<th class="right"><a href="./lEquipe.html">L'EQUIPE</a></th>
+				  		<th class="left"><a href="./devis.html">FAIRE UN DEVIS</a></th>
+				  	</tr>
+				</table>
+			</div>
+			
+			<div class="col-f-4 column rightPart">
+				<img src="../images/phone-call.png" alt="logo phone" class="icon">
+				<p>numéro de téléphone</p><br>
+				<img src="../images/arroba.png" alt="logo arroba" class="icon">
+				<p>email</p><br>
+        		<img src="../images/gps.png" alt="logo adresse" class="icon">
+        		<p>adresse</p>
+			</div>
+		</div>
+		<p class="copyright"><small>Copyright © 2021 Laura Potier</small></p>
+	</footer>
+
+	<!-- le script ci-dessous permet juste de faire changer le logo quand la souris le survole -->
+	<script src="../js/script.js"></script>
+
+</body>
+</html>

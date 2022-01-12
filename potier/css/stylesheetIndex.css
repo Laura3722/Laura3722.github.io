@@ -1,0 +1,102 @@
+/* le css ci-dessous permet aux effets, quand l'utilisateur descend sur la page, de se réaliser */
+
+section {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+section:nth-child(odd) {
+  background: #FFEAC1;
+}
+
+section .container {
+  margin: 100px;
+}
+
+section h1 {
+  font-size: 4rem;
+  color: #914E00;
+  margin: 20px;
+}
+
+section h2 {
+  font-size: 100px;
+  color: #914E00;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+section .text-container {
+  display: flex;
+}
+
+@media (max-width: 900px) {
+  section h1 {
+    font-size: 2rem;
+    text-align: center;
+  }
+  section .text-container {
+    flex-direction: column;
+  }
+}
+
+section .text-box p {
+  font-size: 30px;
+  color: #914E00;
+}
+
+.display {
+  position: relative;
+  opacity: 0;
+}
+
+.display.active {
+  opacity: 1;
+}
+
+.active.fade-bottom {
+  animation: fade-bottom 1s ease-in;
+}
+
+@keyframes fade-bottom {
+  0% {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.active.fade-left {
+  animation: fade-left 1s ease-in;
+}
+
+@keyframes fade-left {
+  0% {
+    transform: translateX(-100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.active.fade-right {
+  animation: fade-right 1s ease-in;
+}
+
+@keyframes fade-right {
+  0% {
+    transform: translateX(100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}

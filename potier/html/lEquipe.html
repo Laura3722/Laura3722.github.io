@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="../css/stylesheet.css">
+	<link rel="stylesheet" type="text/css" href="../css/stylesheetResize.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap" rel="stylesheet">
+	<title>BE REAL</title>
+	<script>
+		// cette fonction valide le formulaire de la newsletter en affichant une alerte pour dire que la personne s'est bien inscrit
+		function validateNewsletter(){
+	  		if (document.getElementById('emailAddress') != "") {
+	  			alert("Merci de vous être inscrit à notre newsletter pour recevoir plus d'informations sur nous et nos actualités! :)")
+	  		}
+	  	}
+	</script>
+</head>
+<body>
+
+	<!-- le header est composé du logo et d'une barre de navigation -->
+	<header>
+		<img src="../images/logo.png" alt="logo" class="logo" id="image">
+	    <menu>
+		    <li><a href="./contact.html">Contact</a></li>
+		    <li><a href="./devis.html">Devis</a></li>
+		    <li><a href="./agences.html">Agence</a></li>
+		    <li><a href="./lEquipe.html" class="currentPage">L'équipe</a></li>
+		    <li><a href="./quisommesnous.html">Qui sommes-nous?</a></li>
+	     	<li><a href="./index.html">Home</a></li>
+	    </menu>
+	</header>
+
+	<main>
+		<p class="h3Title">L'équipe</p>
+
+		<div class="roww rowEquipe thePeople">
+			<div class="col-4 columnEquipe Maria">
+				<img src="../images/maria.jpg" alt="photo maria" class="photoEquipe">
+				<div class="smallRectangle"> 
+					<p>María</p>
+				</div>
+				<div class="bigRectangle">
+					<p>Cheffe de projet avec un sens de l'humour aussi incroyable et perfectionniste que son travail.</p>
+				</div>
+			</div>
+			<div class="col-4 columnEquipe Lea">
+				<img src="../images/lea.jpg" alt="photo lea" class="photoEquipe">
+				<div class="smallRectangle">
+					<p>Léa</p>
+				</div>
+				<div class="bigRectangle">
+					<p>Designer en herbe, son sourire et sa bonne humeur fait d'elle un élément incontournable.</p>
+				</div>
+			</div>
+			<div class="col-4 columnEquipe Alexia">
+				<img src="../images/alexia.jpg" alt="photo alexia" class="photoEquipe">
+				<div class="smallRectangle">
+					<p>Alexia</p>
+				</div>
+				<div class="bigRectangle">
+					<p>Infographiste de haut niveau, aussi haut que lorsqu'elle vole en parapente dans son temps libre.</p>
+				</div>
+			</div>
+		</div>
+	
+	<div class="newsletter">
+		    <p>S'abonner à la newsletter</p>
+		    <form class="contactForm" method="post" name="contactForm" onsubmit="validateNewsletter()">
+			    <input type="Email" class="field" id="emailAddress" placeholder="adresse mail" required>
+			    <input id="submitLogin" class="field" type="submit" value="Submit" >
+			</form>
+	  	</div>
+
+	</main>
+	
+	<!-- le footer se compose de trois parties : les réseaux sociaux avec des images, les liens rapides dans tableau et des informations de contact avec des images -->
+	<footer>
+		<div class="row">
+			<div class="col-f-4 column leftPart">
+        		<p>Suivez-nous sur nos réseaux</p>
+        		<div class="icon">
+					<img src="../images/facebook.png" alt="logo Facebook">
+					<img src="../images/instagram.png" alt="logo Instagram">
+					<img src="../images/twitter.png" alt="logo Twitter">
+					<img src="../images/pinterest.png" alt="logo Pinterest">
+					<img src="../images/whatsapp.png" alt="logo Whatsapp">
+					<img src="../images/youtube.png" alt="logo YouTube">
+				</div>
+			</div>
+
+			<div class="col-f-4 column middlePart">
+				<table>
+				  	<tr>
+				  		<th class="right"><a href="./index.html">HOME</a></th>
+				  		<th class="left"><a href="./quisommesnous.html">EXPERTISE</a></th>
+				  	</tr>
+				  	<tr>
+				  		<th class="right"><a href="./contact.html">CONTACT</a></th>
+				  		<th class="left"><a href="./agences.html">AGENCES</a></th>
+				  	</tr>
+				  	<tr>
+				  		<th class="right"><a href="./lEquipe.html">L'EQUIPE</a></th>
+				  		<th class="left"><a href="./devis.html">FAIRE UN DEVIS</a></th>
+				  	</tr>
+				</table>
+			</div>
+			
+			<div class="col-f-4 column rightPart">
+				<img src="../images/phone-call.png" alt="logo phone" class="icon">
+				<p>numéro de téléphone</p><br>
+				<img src="../images/arroba.png" alt="logo arroba" class="icon">
+				<p>email</p><br>
+        		<img src="../images/gps.png" alt="logo adresse" class="icon">
+        		<p>adresse</p>
+			</div>
+		</div>
+		<p class="copyright"><small>Copyright © 2021 Laura Potier</small></p>
+	</footer>
+
+	<!-- le script ci-dessous permet juste de faire changer le logo quand la souris le survole -->
+	<script src="../js/script.js"></script>
+
+</body>
+</html>

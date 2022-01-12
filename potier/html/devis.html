@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="../css/stylesheet.css">
+	<link rel="stylesheet" type="text/css" href="../css/stylesheetResize.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap" rel="stylesheet">
+	<title>BE REAL</title>
+	<script>
+		// cette fonction valide le formulaire de la newsletter en affichant une alerte pour dire que la personne s'est bien inscrit
+		function validateNewsletter(){
+	  		if (document.getElementById('emailAddress') != "") {
+	  			alert("Merci de vous être inscrit à notre newsletter pour recevoir plus d'informations sur nous et nos actualités! :)")
+	  		}
+	  	}
+	</script>
+</head>
+<body>
+
+	<!-- le header est composé du logo et d'une barre de navigation -->
+	<header>
+		<img src="../images/logo.png" alt="logo" class="logo" id="image">
+	    <menu>
+		    <li><a href="./contact.html">Contact</a></li>
+		    <li><a href="./devis.html" class="currentPage">Devis</a></li>
+		    <li><a href="./agences.html">Agence</a></li>
+		    <li><a href="./lEquipe.html">L'équipe</a></li>
+		    <li><a href="./quisommesnous.html">Qui sommes-nous?</a></li>
+	     	<li><a href="./index.html">Home</a></li>
+	    </menu>
+	</header>
+
+	<main>
+		<p class="h3Title">Réaliser un devis*</p>
+		
+		<div class="background backgroundDevis">
+			
+			<!-- ce formulaire permet à l'utilisateur d'effectuer un devis avec des réductions possibles -->
+			<form class="devisForm" method="post" name="devisForm" onsubmit ="validateFormDevis();">
+				<input type="text" id="formSurname" class="field" placeholder="nom*" required>
+			  	<input type="text" id="formName" class="field" placeholder="prénom*" required><br>
+			  	<input type="Email" id="emailAddressForm" class="field" placeholder="email*" required><br>
+			  	<input type="tel" id="phoneNumber" class="field" placeholder="numéro de téléphone*" required><br>
+			 	
+			 	<div class="options">
+				 	<input type="checkbox" name="checkboxChoice" id="checkboxChoiceOne" value="200">
+				 	<label for="checkboxChoiceOne" class="choice">Création d'un logo et charte graphique</label><br>
+				 	
+				 	<input type="checkbox" name="checkboxChoice" id="checkboxChoiceTwo" value="300">
+				 	<label for="checkboxChoiceTwo" class="choice">Analyse site web</label><br>
+				  	
+				  	<input type="checkbox" name="checkboxChoice" id="checkboxChoiceThree" value="250">
+				 	<label for="checkboxChoiceThree" class="choice">Élaboration d'un plan de communication</label><br>
+
+				 	<input type="checkbox" name="checkboxChoice" id="checkboxChoiceFour" value="500">
+				 	<label for="checkboxChoiceFour" class="choice">Refonte d'un site web</label><br>
+
+				 	<input type="checkbox" name="checkboxChoice" id="checkboxChoiceFive" value="350">
+				 	<label for="checkboxChoiceFive" class="choice">Création d'un site web</label><br>
+
+				 	<input type="checkbox" name="checkboxChoice" id="checkboxChoiceSix" value="100">
+				 	<label for="checkboxChoiceSix" class="choice">Aide au référencement</label><br>
+				</div>
+
+			 	
+			 	<div class="promo">
+				 	<p>-5% pour plus de 3 cases cochées</p>
+				 	<p>-10% pour plus de 5 cases cochées</p>
+			 	</div><br>
+
+			  	<input id="submitLoginForm" class="field" type="submit" value="Submit">
+			</form> 
+			
+			<p class="pPS">*pour toute autre prestation, veuillez prendre contact avec nous dans l'onglet "contact"</p><br>
+
+			<script>
+				// cette fonction calcule le devis et fait une réduction selon le nombre de cases cochées et ensuite alerte l'utilisateur du prix
+				function validateFormDevis () {
+					var numSelected = 0;
+					var input = document.getElementsByName("checkboxChoice");
+			   		var total = 0;
+
+			   		for (var i = 0; i < input.length; i++){
+			      		if (input[i].checked){
+			      			numSelected++;
+			         		total += parseFloat(input[i].value);
+			      		}
+			   		} if (numSelected >= 3 && numSelected < 5) {
+			   			total = total * 0.95;
+			   		} else if (numSelected >= 5) {
+			   			total = total * 0.90;
+
+			   		}
+			   		
+			   		alert("Le devis est estimé à "+ total + "€." + " Pour plus d'information, veuillez prendre contact avec nous :)");
+				}
+			</script>
+		</div>
+		
+		<div class="newsletter">
+		    <p>S'abonner à la newsletter</p>
+		    <form class="contactForm" method="post" name="contactForm" onsubmit="validateNewsletter()">
+			    <input type="Email" class="field" id="emailAddress" placeholder="adresse mail" required>
+			    <input id="submitLogin" class="field" type="submit" value="Submit" >
+			</form>
+	  	</div>
+
+	</main>
+	
+	<!-- le footer se compose de trois parties : les réseaux sociaux avec des images, les liens rapides dans tableau et des informations de contact avec des images -->
+	<footer>
+		<div class="row">
+			<div class="col-f-4 column leftPart">
+        		<p>Suivez-nous sur nos réseaux</p>
+        		<div class="icon">
+					<img src="../images/facebook.png" alt="logo Facebook">
+					<img src="../images/instagram.png" alt="logo Instagram">
+					<img src="../images/twitter.png" alt="logo Twitter">
+					<img src="../images/pinterest.png" alt="logo Pinterest">
+					<img src="../images/whatsapp.png" alt="logo Whatsapp">
+					<img src="../images/youtube.png" alt="logo YouTube">
+				</div>
+			</div>
+
+			<div class="col-f-4 column middlePart">
+				<table>
+				  	<tr>
+				  		<th class="right"><a href="./index.html">HOME</a></th>
+				  		<th class="left"><a href="./quisommesnous.html">EXPERTISE</a></th>
+				  	</tr>
+				  	<tr>
+				  		<th class="right"><a href="./contact.html">CONTACT</a></th>
+				  		<th class="left"><a href="./agences.html">AGENCES</a></th>
+				  	</tr>
+				  	<tr>
+				  		<th class="right"><a href="./lEquipe.html">L'EQUIPE</a></th>
+				  		<th class="left"><a href="./devis.html">FAIRE UN DEVIS</a></th>
+				  	</tr>
+				</table>
+			</div>
+			
+			<div class="col-f-4 column rightPart">
+				<img src="../images/phone-call.png" alt="logo phone" class="icon">
+				<p>numéro de téléphone</p><br>
+				<img src="../images/arroba.png" alt="logo arroba" class="icon">
+				<p>email</p><br>
+        		<img src="../images/gps.png" alt="logo adresse" class="icon">
+        		<p>adresse</p>
+			</div>
+		</div>
+		<p class="copyright"><small>Copyright © 2021 Laura Potier</small></p>
+	</footer>
+
+	<!-- le script ci-dessous permet juste de faire changer le logo quand la souris le survole -->
+	<script src="../js/script.js"></script>
+
+</body>
+</html>
